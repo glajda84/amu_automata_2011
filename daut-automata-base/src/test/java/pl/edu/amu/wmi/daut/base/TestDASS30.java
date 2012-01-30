@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 /**
 * Test metody accepts klasy DeterministicAutomaton
+*/
 public class TestDeterministicAutomaton {
 
 	public final void testAutomatonAcceptingThreeZeros() {
