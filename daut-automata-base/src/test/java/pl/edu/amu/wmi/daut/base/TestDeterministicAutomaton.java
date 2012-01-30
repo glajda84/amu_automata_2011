@@ -36,7 +36,7 @@ public class TestDeterministicAutomaton {
         	assertTrue(automaton.accepts("0100"));
         	assertTrue(automaton.accepts("010101"));
 		assertTrue(automaton.accepts("1010010001"));
-        	assertFalse(automaton.accepts("001012"));
+        	assertFalse(automaton.accepts("001201"));
         	assertFalse(automaton.accepts("0000"));
         	assertFalse(automaton.accepts("00010101010"));
         	assertFalse(automaton.accepts(""));
