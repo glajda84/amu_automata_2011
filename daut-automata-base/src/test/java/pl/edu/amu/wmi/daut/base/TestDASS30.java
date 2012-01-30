@@ -3,9 +3,7 @@ package pl.edu.amu.wmi.daut.base;
 import junit.framework.TestCase;
 
 /**
-* Test metody accepts klasy DeterministicAutomaton akceptuj¹cy s³owa 
-* z dowoln¹ liczb¹ "1" oraz liczb¹ "0" podzieln¹ przez "3"
-*/
+* Test metody accepts klasy DeterministicAutomaton
 public class TestDeterministicAutomaton {
 
 	public final void testAutomatonAcceptingThreeZeros() {
@@ -13,21 +11,17 @@ public class TestDeterministicAutomaton {
         	State q0 = sp.addState();
         	State q1 = sp.addState();
         	State q2 = sp.addState();
-			State q3 = sp.addState();
         
         
         	sp.addLoop(q0, new CharTransitionLabel('1'));
         	sp.addTransition(q0, q1, new CharTransitionLabel('0'));
         	sp.addTransition(q1, q2, new CharTransitionLabel('0'));
-        	sp.addTransition(q2, q3, new CharTransitionLabel('0'));
-			sp.addTransition(q3, q1, new CharTransitionLabel('0'));
+        	sp.addTransition(q2, q0, new CharTransitionLabel('0'));
         	sp.addLoop(q1, new CharTransitionLabel('1'));
         	sp.addLoop(q2, new CharTransitionLabel('1'));
-			sp.addLoop(q3, new CharTransitionLabel('1'));
-			
         
         	sp.markAsInitial(q0);
-        	sp.markAsFinal(q3);
+        	sp.markAsFinal(q0);
 
 		AutomatonByRecursion automaton = new AutomatonByRecursion(spec);
         	assertTrue(automaton.accepts("000"));
