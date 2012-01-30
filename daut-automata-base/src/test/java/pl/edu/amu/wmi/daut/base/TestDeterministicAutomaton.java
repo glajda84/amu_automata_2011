@@ -1,23 +1,25 @@
+
 package pl.edu.amu.wmi.daut.base;
 
 import junit.framework.TestCase;
 
-/** Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
+/** 
+ * Test metody accepts klasy DeterministicAutomaton akceptujący słowa
  * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
  * 
  *  @author Aleksandra
  */
 public class TestDeterministicAutomaton extends TestCase {
      /**
-         *  test -> simple test
-         */
+      *  test -> simple test
+      */
     public final void testAutomatonAcceptingThreeZeros() {
         final DeterministicAutomatonSpecification test = new NaiveDeterministicAutomatonSpecification();
         State q0 = test.addState();
         State q1 = test.addState();
         State q2 = test.addState();
         State q3 = test.addState();        
-        
+
         test.addLoop(q0, new CharTransitionLabel('1'));
         test.addTransition(q0, q1, new CharTransitionLabel('0'));
         test.addTransition(q1, q2, new CharTransitionLabel('0'));
@@ -25,11 +27,11 @@ public class TestDeterministicAutomaton extends TestCase {
         test.addTransition(q3, q1, new CharTransitionLabel('0'));
         test.addLoop(q1, new CharTransitionLabel('1'));
         test.addLoop(q2, new CharTransitionLabel('1'));
-        test.addLoop(q3, new CharTransitionLabel('1'));                			
-        
+        test.addLoop(q3, new CharTransitionLabel('1'));
+
         test.markAsInitial(q0);
         test.markAsFinal(q3);
-                
+
         /**
          * at -> automaton test
          */
@@ -46,6 +48,6 @@ public class TestDeterministicAutomaton extends TestCase {
         assertFalse(at.accepts("00010101010"));
         assertFalse(at.accepts(""));
         assertFalse(at.accepts("bdaasrweewrgsdf"));
-        assertFalse(at.accepts("&%*$&##@!"));        
+        assertFalse(at.accepts("&%*$&##@!"));
     }
 }
