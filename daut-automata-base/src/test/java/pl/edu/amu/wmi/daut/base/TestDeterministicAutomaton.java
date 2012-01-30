@@ -18,7 +18,7 @@ public class TestDeterministicAutomaton extends TestCase {
         	spec.addLoop(q0, new CharTransitionLabel('1'));
         	spec.addTransition(q0, q1, new CharTransitionLabel('0'));
         	spec.addTransition(q1, q2, new CharTransitionLabel('0'));
-        	spec.addTransition(q2, q3, new CharTransitionLabel('0'));
+        	spec.addTransition(q2, q0, new CharTransitionLabel('0'));
                 
         	spec.addLoop(q1, new CharTransitionLabel('1'));
         	spec.addLoop(q2, new CharTransitionLabel('1'));
@@ -39,7 +39,7 @@ public class TestDeterministicAutomaton extends TestCase {
         	assertFalse(automaton.accepts("001201"));
         	assertFalse(automaton.accepts("0000"));
         	assertFalse(automaton.accepts("00010101010"));
-        	assertFalse(automaton.accepts(""));
+        	/*assertFalse(automaton.accepts(""));*/
         	assertFalse(automaton.accepts("bdaasrweewrgsdf"));
         	assertFalse(automaton.accepts("&%*$&##@!"));
         
