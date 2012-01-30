@@ -14,7 +14,7 @@ public class TestDeterministicAutomaton extends TestCase {
       *  test -> simple test.
       */
     public final void testAutomatonAcceptingThreeZeros() {
-        final DeterministicAutomatonSpecification test = 
+        final DeterministicAutomatonSpecification test =
                 new NaiveDeterministicAutomatonSpecification();
         State q0 = test.addState();
         State q1 = test.addState();
