@@ -3,13 +3,13 @@ package pl.edu.amu.wmi.daut.base;
 import junit.framework.TestCase;
 
 
-/* Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
+/** Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
 * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
 */
 public class TestDeterministicAutomaton {
 
 	public final void testAutomatonAcceptingThreeZeros() {
-                DeterministicAutomaton sp = new DeterministicAutomaton();
+                final DeterministicAutomaton sp = new DeterministicAutomaton();
         	State q0 = spec.addState();
         	State q1 = spec.addState();
         	State q2 = spec.addState();
@@ -26,7 +26,7 @@ public class TestDeterministicAutomaton {
         	spec.markAsInitial(q0);
         	spec.markAsFinal(q0);
 
-		DeterministicAutomaton automaton = new DeterministicAutomaton(spec);
+		final DeterministicAutomaton automaton = new DeterministicAutomaton(spec);
         	assertTrue(automaton.accepts("000"));
         	assertTrue(automaton.accepts("1000"));
         	assertTrue(automaton.accepts("0001"));
