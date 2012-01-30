@@ -2,14 +2,14 @@ package pl.edu.amu.wmi.daut.base;
 
 import junit.framework.TestCase;
 
-/**
-** Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
+
+/* Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
 * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
 */
-public class TestDeterministicAutomaton {
+public class TestDASS30 {
 
 	public final void testAutomatonAcceptingThreeZeros() {
-                DeterministicAutomatonSpecification sp = new NaiveDeterministicAutomatonSpecification();
+                DeterministicAutomaton sp = new NaiveDeterministicAutomaton();
         	State q0 = sp.addState();
         	State q1 = sp.addState();
         	State q2 = sp.addState();
