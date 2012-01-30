@@ -36,7 +36,7 @@ public class TestDeterministicAutomaton extends TestCase {
  * at -> automaton test
  */
 
-		final AutomatonByRecursion at = new AutomatonByRecursion(spec);
+		final AutomatonByRecursion at = new AutomatonByRecursion(test);
         	assertTrue(automaton.accepts("111"));
                 assertTrue(automaton.accepts("000"));
         	assertTrue(automaton.accepts("1000"));
@@ -47,9 +47,9 @@ public class TestDeterministicAutomaton extends TestCase {
         	assertFalse(automaton.accepts("001201"));
         	assertFalse(automaton.accepts("0000"));
         	assertFalse(automaton.accepts("00010101010"));
-        	/*assertFalse(automaton.accepts(""));
+        	assertFalse(automaton.accepts(""));
         	assertFalse(automaton.accepts("bdaasrweewrgsdf"));
-        	assertFalse(automaton.accepts("&%*$&##@!"));*/
+        	assertFalse(automaton.accepts("&%*$&##@!"));
         
     	}
 }
