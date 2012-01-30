@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 /** Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
 * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
 */
-public class TestDeterministicAutomaton extends TestCase {
+public class TestDeterministicAutomaton {
 
 	public final void testAutomatonAcceptingThreeZeros() {
                 final DeterministicAutomaton spec = new DeterministicAutomaton();
