@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 public class TestDeterministicAutomaton {
 
 	public final void testAutomatonAcceptingThreeZeros() {
-                final DeterministicAutomaton spec = new DeterministicAutomaton();
+                final AutomatonSpecification spec = new NaiveAutomatonSpecification();
         	State q0 = spec.addState();
         	State q1 = spec.addState();
         	State q2 = spec.addState();
