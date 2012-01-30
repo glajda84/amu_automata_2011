@@ -3,22 +3,23 @@ package pl.edu.amu.wmi.daut.base;
 
 import junit.framework.TestCase;
 
-/** 
- * Test metody accepts klasy DeterministicAutomaton akceptujący słowa
+/**
+ * Test metody accepts klasy DeterministicAutomaton akceptujący słowa.
  * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
  * 
  *  @author Aleksandra
  */
 public class TestDeterministicAutomaton extends TestCase {
      /**
-      *  test -> simple test
+      *  test -> simple test.
       */
     public final void testAutomatonAcceptingThreeZeros() {
-        final DeterministicAutomatonSpecification test = new NaiveDeterministicAutomatonSpecification();
+        final DeterministicAutomatonSpecification test = 
+                new NaiveDeterministicAutomatonSpecification();
         State q0 = test.addState();
         State q1 = test.addState();
         State q2 = test.addState();
-        State q3 = test.addState();        
+        State q3 = test.addState();
 
         test.addLoop(q0, new CharTransitionLabel('1'));
         test.addTransition(q0, q1, new CharTransitionLabel('0'));
@@ -33,7 +34,7 @@ public class TestDeterministicAutomaton extends TestCase {
         test.markAsFinal(q3);
 
         /**
-         * at -> automaton test
+         * at -> automaton test.
          */
 
         final AutomatonByRecursion at = new AutomatonByRecursion(test);
