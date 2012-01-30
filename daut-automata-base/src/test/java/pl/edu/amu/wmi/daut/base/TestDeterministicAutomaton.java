@@ -4,31 +4,39 @@ import junit.framework.TestCase;
 
 
 /** Test metody accepts klasy DeterministicAutomaton akceptujący słowa 
-* z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
-*/
+ * z dowolną liczbą "1" oraz liczbą "0" podzielną przez "3"
+ * 
+ *  @author Aleksandra
+ */
 public class TestDeterministicAutomaton extends TestCase {
-
+/**
+ *  test -> simple test
+ */
 	public final void testAutomatonAcceptingThreeZeros() {
-                final DeterministicAutomatonSpecification spec = new NaiveDeterministicAutomatonSpecification();
-        	State q0 = spec.addState();
-        	State q1 = spec.addState();
-        	State q2 = spec.addState();
+                final DeterministicAutomatonSpecification test = new NaiveDeterministicAutomatonSpecification();
+        	State q0 = test.addState();
+        	State q1 = test.addState();
+        	State q2 = test.addState();
         
         
-        	spec.addLoop(q0, new CharTransitionLabel('1'));
-        	spec.addTransition(q0, q1, new CharTransitionLabel('0'));
-        	spec.addTransition(q1, q2, new CharTransitionLabel('0'));
-        	spec.addTransition(q2, q0, new CharTransitionLabel('0'));
+        	test.addLoop(q0, new CharTransitionLabel('1'));
+        	test.addTransition(q0, q1, new CharTransitionLabel('0'));
+        	test.addTransition(q1, q2, new CharTransitionLabel('0'));
+        	test.addTransition(q2, q0, new CharTransitionLabel('0'));
                 
-        	spec.addLoop(q1, new CharTransitionLabel('1'));
-        	spec.addLoop(q2, new CharTransitionLabel('1'));
+        	test.addLoop(q1, new CharTransitionLabel('1'));
+        	test.addLoop(q2, new CharTransitionLabel('1'));
                 
 			
         
-        	spec.markAsInitial(q0);
-        	spec.markAsFinal(q0);
+        	test.markAsInitial(q0);
+        	test.markAsFinal(q0);
+                
+/**
+ * at -> automaton test
+ */
 
-		final AutomatonByRecursion automaton = new AutomatonByRecursion(spec);
+		final AutomatonByRecursion at = new AutomatonByRecursion(spec);
         	assertTrue(automaton.accepts("111"));
                 assertTrue(automaton.accepts("000"));
         	assertTrue(automaton.accepts("1000"));
@@ -39,7 +47,7 @@ public class TestDeterministicAutomaton extends TestCase {
         	assertFalse(automaton.accepts("001201"));
         	assertFalse(automaton.accepts("0000"));
         	assertFalse(automaton.accepts("00010101010"));
-        	/*assertFalse(automaton.accepts(""));*/
+        	assertFalse(automaton.accepts(""));
         	assertFalse(automaton.accepts("bdaasrweewrgsdf"));
         	assertFalse(automaton.accepts("&%*$&##@!"));
         
