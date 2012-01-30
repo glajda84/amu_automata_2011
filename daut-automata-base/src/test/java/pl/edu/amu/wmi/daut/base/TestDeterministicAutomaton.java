@@ -23,7 +23,7 @@ public class TestDeterministicAutomaton extends TestCase {
         	test.addLoop(q0, new CharTransitionLabel('1'));
         	test.addTransition(q0, q1, new CharTransitionLabel('0'));
         	test.addTransition(q1, q2, new CharTransitionLabel('0'));
-        	test.addTransition(q2, q0, new CharTransitionLabel('0'));
+        	test.addTransition(q2, q3, new CharTransitionLabel('0'));
                 test.addTransition(q3, q1, new CharTransitionLabel('0'));
         	test.addLoop(q1, new CharTransitionLabel('1'));
         	test.addLoop(q2, new CharTransitionLabel('1'));
