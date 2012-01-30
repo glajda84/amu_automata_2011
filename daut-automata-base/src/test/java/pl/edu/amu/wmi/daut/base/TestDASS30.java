@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 public class TestDASS30 {
 
 	public final void testAutomatonAcceptingThreeZeros() {
-                DeterministicAutomaton sp = new NaiveDeterministicAutomaton();
+                DeterministicAutomaton sp = new DeterministicAutomaton();
         	State q0 = sp.addState();
         	State q1 = sp.addState();
         	State q2 = sp.addState();
